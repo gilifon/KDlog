@@ -1,5 +1,5 @@
 <?
-include ("db_4x4trail.inc");
+include ("db_KDlog.inc");
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 header('Content-type: application/json');
@@ -13,7 +13,7 @@ if (isset ( $info ['call'] )) {
 } else {
 	$call = '';
 }
-$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on` from log where `call` = '$call'") or die('Error: ' . mysql_error());
+$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on` from log where `call` = '$call' order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
 while($obj = mysql_fetch_object($result)) {
 $res[] = $obj;
 }
