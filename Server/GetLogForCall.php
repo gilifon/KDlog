@@ -10,10 +10,13 @@ $info = $_POST ["info"];
 // extract all the properties of the request
 if (isset ( $info ['call'] )) {
 	$call = $info ['call'];
+	if ($call == "*all*")
+		$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on` from log order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
+	else
+		$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on` from log where `call` = '$call' order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
 } else {
-	$call = '';
+	$result = '';
 }
-$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on` from log where `call` = '$call' order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
 while($obj = mysql_fetch_object($result)) {
 $res[] = $obj;
 }
