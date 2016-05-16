@@ -4,6 +4,7 @@
     this.linkList = ko.observableArray();
     this.callsign = ko.observable('');
     this.didNotWork = ko.observable(false);
+    var that = this;
 
     this.GetWokedSections = function () {
         $.ajax({
@@ -32,7 +33,9 @@
             shell.selectedMainMenu('sections');
         },
         compositionComplete: function () {
-            
+            jwerty.key('enter', function () {
+                GetWokedSections();
+            }, that);
         },
         linkList: linkList,
         callsign: callsign,

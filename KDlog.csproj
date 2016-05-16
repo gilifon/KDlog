@@ -835,6 +835,7 @@
     <Content Include="assets\plugins\bootstrap3-editable\img\loading.gif" />
     <Content Include="assets\plugins\bootstrap3-editable\js\bootstrap-editable.js" />
     <Content Include="assets\plugins\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Scripts\jwerty.js" />
     <Content Include="Scripts\less-1.4.1.min.js" />
     <Content Include="Scripts\moment-with-langs.js" />
     <Content Include="Scripts\moment-with-langs.min.js" />

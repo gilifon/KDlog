@@ -4,15 +4,15 @@
     <h3 style="direction:ltr" data-bind="visible:shell.lang() == 'en'">4Z1KD Online Logbook</h3>-->
     <p class="margin-bottom-40"></p>
     <p>
-        Enter your callsign to get our QSO list
+        Enter your callsign and check if you are in the log
     </p>
     <p>
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <input class="form-control" data-bind="value: callsign" placeholder="Your Call" type="text" tabindex="1" />
+                <input class="form-control" data-bind="value: callsign, valueUpdate: 'afterkeydown'" placeholder="Your Call" type="text" tabindex="1" />
             </div>
             <div class="col-md-2 col-sm-3 col-xs-3">
-                <button data-bind="click: GetWokedSections" type="button" class="btn btn-info"><span class="glyphicon glyphicon-certificate"></span> Check</button>
+                <button id="CheckBtn" data-bind="click: GetWokedSections" type="button" class="btn btn-info"><span class="glyphicon glyphicon-certificate"></span> Check</button>
             </div>
         </div>
     </p>
@@ -32,6 +32,7 @@
                             <th>Mode</th>
                             <th>Band</th>
                             <th>Frequency</th>
+                            <th>4XFF Reference</th>
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: linkList">
@@ -42,6 +43,7 @@
                             <td data-bind="text: mode"></td>
                             <td data-bind="text: band"></td>
                             <td data-bind="text: freq"></td>
+                            <td data-bind="text: wwff_ref"></td>                            
                         </tr>
                     </tbody>
                 </table>
