@@ -950,6 +950,7 @@
     <Content Include="Scripts\jquery-2.0.3.min.map" />
     <Content Include="Server\GetLogForCall.php" />
     <Content Include="Server\GetAllLog.php" />
+    <Content Include="Server\AddLog.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
