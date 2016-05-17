@@ -7,6 +7,7 @@
     var that = this;
 
     this.GetWokedSections = function () {
+        if (callsign() == "") return;
         $.ajax({
             type: "POST",
             url: "./Server/GetLogForCall.php",

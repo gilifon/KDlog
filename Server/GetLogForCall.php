@@ -11,9 +11,14 @@ $info = $_POST ["info"];
 if (isset ( $info ['call'] )) {
 	$call = $info ['call'];
 	if ($call == "*all*")
+	{
 		$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on`, `wwff_ref` from log order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
+		}
 	else
+	{
 		$result = mysql_query("select `call`,`band`,`freq`,`mode`,`qso_date`,`time_on`, `wwff_ref` from log where `call` = '$call' order by `qso_date` desc ,`time_on` desc ") or die('Error: ' . mysql_error());
+		mysql_query("insert into audit (`call`) values ('$call')");
+		}
 } else {
 	$result = '';
 }
