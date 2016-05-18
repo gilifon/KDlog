@@ -31,7 +31,7 @@
             return router.activate();
         },
         compositionComplete: function () {
-            
+            $("#loadingImage").hide();
         }
     };
 });
