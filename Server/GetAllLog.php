@@ -1,5 +1,5 @@
 <?
-include ("db_4x4trail.inc");
+include ("db_KDlog.inc");
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 header('Content-type: application/json');

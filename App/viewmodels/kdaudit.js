@@ -17,9 +17,7 @@
             });
         },
         compositionComplete: function () {
-            jwerty.key('enter', function () {
-                GetWokedSections();
-            }, that);
+            
         },
         linkList: linkList,
         shell: shell

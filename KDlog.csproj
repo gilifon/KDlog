@@ -147,9 +147,11 @@
     <Content Include="App\services\httpService.js" />
     <Content Include="App\services\themeManager.js" />
     <Content Include="App\services\utilities.js" />
+    <Content Include="App\viewmodels\kdstatistics.js" />
     <Content Include="App\viewmodels\kdaudit.js" />
     <Content Include="App\viewmodels\kdlog.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\views\kdstatistics.html" />
     <Content Include="App\views\kdaudit.html" />
     <Content Include="App\views\kdlog.html" />
     <Content Include="App\views\shell.html" />
@@ -838,6 +840,8 @@
     <Content Include="assets\plugins\bootstrap3-editable\js\bootstrap-editable.js" />
     <Content Include="assets\plugins\bootstrap3-editable\js\bootstrap-editable.min.js" />
     <Content Include="Scripts\ajax_loading.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jwerty.js" />
     <Content Include="Scripts\less-1.4.1.min.js" />
     <Content Include="Scripts\moment-with-langs.js" />
