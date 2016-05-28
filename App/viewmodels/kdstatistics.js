@@ -7,6 +7,10 @@
     this.refData = ko.observableArray();
     this.isWwffOnly = ko.observable(true);
 
+    this.totalQSO = ko.observable(0);
+    this.uniqueCall = ko.observable(0);
+    this.totalRefs = ko.observable(0);
+
     var that = this;
 
     this.drawChart = function () {
@@ -23,6 +27,10 @@
             url: "./Server/GetAllLog.php",
         }).done(function (data) {
             linkList(data);
+            totalQSO(Enumerable.From(linkList()).Where(whereClause).Count());
+            uniqueCall(Enumerable.From(linkList()).Where(whereClause).Select("$.call").Distinct().Count());
+            totalRefs(Enumerable.From(linkList()).Where(whereClause).Select("$.wwff_ref").Distinct().Count());
+
 
             //*************************** mode ***************************/
             Enumerable.From(linkList()).Where(whereClause).Select("$.mode").Distinct().OrderByDescending().ForEach(function (s, index) {
